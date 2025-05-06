@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Calendar, BookOpen, Clock, CheckSquare, Settings, Home } from 'lucide-react';
 
 const Sidebar: React.FC = () => {
@@ -36,8 +36,8 @@ interface NavigationItemProps {
 }
 
 const NavigationItem: React.FC<NavigationItemProps> = ({ to, icon, label }) => {
-  // We'll enhance this with active route detection later
-  const isActive = window.location.pathname === to;
+  const location = useLocation();
+  const isActive = location.pathname === to;
   
   return (
     <Link 
