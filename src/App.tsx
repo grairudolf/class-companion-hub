@@ -13,6 +13,7 @@ import TimetablePage from "./pages/TimetablePage";
 import CoursesPage from "./pages/CoursesPage";
 import AssignmentsPage from "./pages/AssignmentsPage";
 import SettingsPage from "./pages/SettingsPage";
+import StudyPlannerPage from "./pages/StudyPlannerPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -49,6 +50,12 @@ const App = () => (
               <Route path="/assignments" element={
                 <ProtectedRoute>
                   <AssignmentsPage />
+                </ProtectedRoute>
+              } />
+              
+              <Route path="/study-planner" element={
+                <ProtectedRoute>
+                  <StudyPlannerPage />
                 </ProtectedRoute>
               } />
               
